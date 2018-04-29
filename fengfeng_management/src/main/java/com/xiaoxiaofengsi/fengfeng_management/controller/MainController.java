@@ -22,7 +22,7 @@ public class MainController {
     @RequestMapping("/insertUser")
     public String insertUser(){
         User user = new User();
-        user.setUserId(1245);
+        user.setUserId(123345);
         user.setUsername("wsh");
         user.setPassword("123456");
         user.setRemark("第一次该springboot使用数据库");
