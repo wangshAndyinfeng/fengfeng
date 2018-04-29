@@ -1,0 +1,57 @@
+
+
+spring:
+ ## applicationuseUnicode=true&characterEncoding=utf8
+  application:
+    name: order
+  ## datasource
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/xiaoxiaofengsi?applicationuseUnicode=true&characterEncoding=utf8
+      username: root
+      password: root
+
+
+#mybatis:
+#  config-location: /mybatis/mybatis-config-mysql.xml
+#  mapperLocations: classpath*:mapper/*.xml
+#  typeAliasesPackage: com.xiaoxiaofengsi.fengfeng_backstage.entity
+
+mybatis:
+  type-aliases-package: cn.saytime.bean
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+
+
+### dubbo
+#dubbo:
+#  # Base packages to scan Dubbo Components (e.g @Service , @Reference)
+#  scan:
+#    basePackages: com.xiaoxiaofengsi.fengfeng_backstage.service
+#  ## ApplicationConfig Bean
+#  application:
+#    id: fengfeng_backstage_provider
+#    name: fengfeng_backstage_provider
+#  ## ProtocolConfig Bean
+#  protocol:
+#    id: dubbo
+#    name: dubbo
+#    port: 20881
+#    threadpool: fixed
+#    threads: 200
+#    status: server
+#  ## RegistryConfig Bean
+#  registry:
+#    id: group-registry
+#    address: zookeeper://localhost:2181?client=curator
+#  provider:
+#    group: devGroup
+#    timeout: 30000
+#    connections: 5
+#    retries: 0
+#  consumer:
+#    group: devGroup
+#    check: false
+#    retries: 0
