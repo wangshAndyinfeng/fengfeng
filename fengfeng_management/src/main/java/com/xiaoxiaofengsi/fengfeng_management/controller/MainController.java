@@ -15,7 +15,12 @@ public class MainController {
 
     @RequestMapping("/login")
     public String home(){
-        return "home/index";
+        return "index";
+    }
+
+    @RequestMapping("/Exhibition")
+    public String exhibition(){
+        return "Exhibition";
     }
 
 
