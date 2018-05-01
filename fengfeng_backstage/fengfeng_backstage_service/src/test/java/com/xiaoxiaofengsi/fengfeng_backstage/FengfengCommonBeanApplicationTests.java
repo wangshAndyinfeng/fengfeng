@@ -2,6 +2,7 @@ package com.xiaoxiaofengsi.fengfeng_backstage;
 
 import com.xiaoxiaofengsi.fengfeng_backstage.redisDao.RedisDao;
 import com.xiaoxiaofengsi.fengfeng_backstage.service.UserFirstService;
+import com.xiaoxiaofengsi.fengfeng_backstage.waientity.Message;
 import com.xiaoxiaofengsi.fengfeng_backstage.waientity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,6 +53,14 @@ public class FengfengCommonBeanApplicationTests {
 		user.setRemark("第一次该springboot使用数据库");
 		 int result = service.insert(user);
 		 System.out.println(result);
+	}
+
+	@Test
+	public void insertMessag(){
+		Message message = new Message();
+		message.setBudgetValue("汪思获傻屌");
+		int result = service.insertMessage(message);
+		System.out.println(result);
 	}
 
 }

@@ -6,7 +6,7 @@
 <meta name="keywords" content="">
 <meta name="description" content="哈哈哈">
 <meta name="author" content="哈哈哈">
-<link href="css/css.css" rel="stylesheet">
+<link th:href="@{/css/css.css}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/slick.css">
 <!--[if lt IE 9]>
     <meta http-equiv="X-UA-Compatible" content="IE=8" >
@@ -16,71 +16,7 @@
 <title>哈哈哈</title>
 </head>
 <body cur="0">
-  
-  <!--head-->
-  <div class="head">
-    <div class="top">
-      <div class="wrap">
-        您好！朋友，欢迎您浏览哈哈哈官方网站！  [ <a href="login.html" class="fc0">请登录</a> ]    [ <em class="myfont">&#xe602;</em><a href="reg.html">免费注册</a> ]
-        <span class="tel clearfix">
-          <span class="num fr">
-            <i>Service hotline</i>
-            400-021-1234
-          </span>
-          <em class="myfont">&#xe608;</em>
-        </span>
-      </div>
-    </div>
-    <div class="header">
-      <div class="wrap clearfix">
-        <a href="index.html" class="logo indent">哈哈哈</a>
-        <ul class="nav mt30">
-          <li><a href="index.html">首 页</a></li>
-          <li>
-            <a href="about.html?id=1">认识我们</a>
-            <div class="slidenav">
-              <a href="#">公司简介</a><a href="#">特许经营</a><a href="#">企业文化</a><a href="#">组织机构</a>
-            </div>
-          </li>
-          <li><a th:href="@{/Exhibition}">展示中心</a>
-          <div class="slidenav">
-              <a href="#">新品上市</a><a href="#">热销产品</a><a href="#">特色主食</a><a href="#">美味小食</a><a href="#">时尚饮品</a><a href="#">活力甜品</a><a href="#">超值套餐</a>
-            </div>
-            </li>
-          <li>
-            <a href="Affiliate.html?id=1">汉堡加盟</a>
-            <div class="slidenav">
-              <a href="#">投资分析</a><a href="#">加盟优势</a><a href="#">加盟条件</a><a href="#">加盟方案</a><a href="#">加盟流程</a><a href="#">后续支持</a><a href="#">加盟问答</a>
-            </div>
-         </li>
-          <li>
-            <a href="News.html">新闻中心</a>
-            <div class="slidenav">
-              <a href="#">最新动态</a><a href="#">开业公告</a><a href="#">行业动态</a>
-            </div>
-         </li>
-          <li>
-            <a href="Milk_tea.html">奶茶加盟</a>
-            <div class="slidenav">
-              <a href="#">奶茶介绍</a>
-            </div>
-         </li>
-          <li>
-            <a href="Services.html">综合服务</a>
-            <div class="slidenav">
-              <a href="#">设计下载</a><a href="#">促销活动</a>
-            </div>
-         </li>
-          <li>
-            <a href="Contact.html">联系我们</a>
-            <div class="slidenav">
-              <a href="#">联系方式</a><a href="#">客户留言</a>
-            </div>
-         </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div th:include="~{common/head :: head}"></div>
   <!--banner-->
   <div class="banner">
     <div class="wrap clearfix" id="banner">
@@ -149,19 +85,23 @@
           <tbody>
             <tr>
               <th>投资预算</th>
-              <td><select id="" name="" class="select"><option value="0">请选择</option></select></td>
+              <td><select id="budget" name="" class="select">
+                <option value="">请选择</option>
+                <option th:unless="${#lists.isEmpty(budgetList)}" th:value="|${budget.budgetId}|"  th:text="|${budget.budgetName}|"   th:each="budget:${budgetList}">
+                </option>
+              </select></td>
               <th>喜欢的风格</th>
-              <td><select id="" name="" class="select"><option value="0">请选择</option></select></td>
+              <td><select id="favoStyle" name="" class="select"><option value="0">请选择</option></select></td>
             </tr>
             <tr>
               <th>开店城市</th>
-              <td><select id="" name="" class="select" style=" width:91px;"><option value="0">请选择</option></select>  <select id="" name="" class="select" style=" width:91px;"><option value="0">请选择</option></select></td>
+              <td><select id="storeCity" name="" class="select" style=" width:91px;"><option value="0">请选择</option></select>  <select id="" name="" class="select" style=" width:91px;"><option value="0">请选择</option></select></td>
               <th>是否有经验</th>
-              <td><select id="" name="" class="select"><option value="0">请选择</option></select></td>
+              <td><select id="experienceOrNo" name="" class="select"><option value="0">请选择</option></select></td>
             </tr>
             <tr>
               <th>是否有店铺</th>
-              <td><select id="" name="" class="select"><option value="0">请选择</option></select></td>
+              <td><select id="storeOrNo" name="" class="select"><option value="0">请选择</option></select></td>
               <th>接收资料</th>
               <td>
                 <label><input type="radio" name="RadioGroup1" value="是" id="RadioGroup1_0"> 是 </label>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -170,21 +110,21 @@
             </tr>
             <tr>
               <th>店铺面积</th>
-              <td><select id="" name="" class="select"><option value="0">请选择</option></select></td>
+              <td><select id="storeArea" name="" class="select"><option value="0">请选择</option></select></td>
               <th>接收资料</th>
               <td><label class="label"><input type="text" name="" value="" class="inpt"><span class="txt">QQ</span></label></td>
             </tr>
             <tr>
               <th>店铺位置</th>
-              <td><select id="" name="" class="select"><option value="0">请选择</option></select></td>
+              <td><select id="storeLocal" name="" class="select"><option value="0">请选择</option></select></td>
               <th>联系电话</th>
-              <td><input type="text" name="" value="" class="inpt"></td>
+              <td><input id="tel" type="text" name="" value="" class="inpt"></td>
             </tr>
           </tbody>
         </table>
         
         <div class="form-bottom mt10 clearfix">
-          <button type="button" name="" value="" class="button submit">提交留言</button>您还可以直接通过电话咨询我们 <span class="tel">400-021-1234</span>
+          <button type="button" name="" value="" class="button" onclick="MyJs()">提交留言</button>您还可以直接通过电话咨询我们 <span class="tel">400-021-1234</span>
         </div>
         
       </div>
@@ -284,7 +224,35 @@ $(document).ready(function() {
 		 autoplaySpeed: 5000,
 	});
 	setInterval('AutoScroll("#scrollDiv")',3000)
+    
 });
+function MyJs() {
+    var budgetValue = $('#budget').val();
+    if(budgetValue == ""){
+        alert("nikanniba");
+        return;
+    }
+    var data = {
+        budgetValue :budgetValue
+    };
+    $.ajax({
+        url : "submitMessage",
+        data : data,
+        async : true,
+        dataType : "JSON",
+        success: function (data) {
+            $.gridUnLoading({message:"正在保存留言"});
+            if(data.rspCode == "200"){
+                alert("保存成功");
+            }else {
+                alert("失败了")
+            }
+        },
+        error: function (data) {
+            $.gridUnLoading({message:"系统维护中"});
+        }
+    });
+}
 function AutoScroll(obj){
         $(obj).find("ul:first").animate({
                 marginTop:"-24px"

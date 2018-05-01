@@ -2,6 +2,7 @@ package com.xiaoxiaofengsi.fengfeng_backstage.serviceapi.impl;
 
 import com.xiaoxiaofengsi.fengfeng_backstage.service.UserFirstService;
 import com.xiaoxiaofengsi.fengfeng_backstage.serviceapi.IUserFirstServiceApi;
+import com.xiaoxiaofengsi.fengfeng_backstage.waientity.Message;
 import com.xiaoxiaofengsi.fengfeng_backstage.waientity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,5 +24,15 @@ public class UserFirstServiceApi implements IUserFirstServiceApi {
         int result = userFirstService.insert(user);
         log.debug("----出来insert()---"+result);
         return result;
-    };
+    }
+
+    @Override
+    public int insertMessage(Message message) {
+        log.debug("----进入insert()---"+message.toString());
+        int result = userFirstService.insertMessage(message);
+        log.debug("----出来insert()---"+result);
+        return result;
+    }
+
+    ;
 }

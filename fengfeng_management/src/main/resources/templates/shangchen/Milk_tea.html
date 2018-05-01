@@ -4,7 +4,7 @@
 <meta name="keywords" content="">
 <meta name="description" content="哈哈哈">
 <meta name="author" content="哈哈哈">
-<link href="css/css.css" rel="stylesheet">
+<link th:href="@{/css/css.css}" rel="stylesheet">
 <!--[if lt IE 9]>
     <meta http-equiv="X-UA-Compatible" content="IE=8" >
 <![endif]-->
@@ -14,69 +14,7 @@
 </head>
 <body cur="5">
   <!--head-->
-  <div class="head">
-    <div class="top">
-      <div class="wrap">
-        您好！朋友，欢迎您浏览哈哈哈官方网站！  [ <a href="login.html" class="fc0">请登录</a> ]    [ <em class="myfont">&#xe602;</em><a href="reg.html">免费注册</a> ]
-        <span class="tel clearfix">
-          <span class="num fr">
-            <i>Service hotline</i>
-            400-021-1234
-          </span>
-          <em class="myfont">&#xe608;</em>
-        </span>
-      </div>
-    </div>
-    <div class="header">
-      <div class="wrap clearfix">
-        <a href="index.html" class="logo indent">哈哈哈</a>
-        <ul class="nav mt30">
-          <li><a href="index.html">首 页</a></li>
-          <li>
-            <a href="about.html?id=1">认识我们</a>
-            <div class="slidenav">
-              <a href="#">公司简介</a><a href="#">特许经营</a><a href="#">企业文化</a><a href="#">组织机构</a>
-            </div>
-          </li>
-          <li><a href="Exhibition.html">展示中心</a>
-          <div class="slidenav">
-              <a href="#">新品上市</a><a href="#">热销产品</a><a href="#">特色主食</a><a href="#">美味小食</a><a href="#">时尚饮品</a><a href="#">活力甜品</a><a href="#">超值套餐</a>
-            </div>
-            </li>
-          <li>
-            <a href="Affiliate.html?id=1">汉堡加盟</a>
-            <div class="slidenav">
-              <a href="#">投资分析</a><a href="#">加盟优势</a><a href="#">加盟条件</a><a href="#">加盟方案</a><a href="#">加盟流程</a><a href="#">后续支持</a><a href="#">加盟问答</a>
-            </div>
-         </li>
-          <li>
-            <a href="News.html">新闻中心</a>
-            <div class="slidenav">
-              <a href="#">最新动态</a><a href="#">开业公告</a><a href="#">行业动态</a>
-            </div>
-         </li>
-          <li>
-            <a href="Milk_tea.html">奶茶加盟</a>
-            <div class="slidenav">
-              <a href="#">奶茶介绍</a>
-            </div>
-         </li>
-          <li>
-            <a href="Services.html">综合服务</a>
-            <div class="slidenav">
-              <a href="#">设计下载</a><a href="#">促销活动</a>
-            </div>
-         </li>
-          <li>
-            <a href="Contact.html">联系我们</a>
-            <div class="slidenav">
-              <a href="#">联系方式</a><a href="#">客户留言</a>
-            </div>
-         </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <div th:include="~{common/head :: head}"></div>
   <div class="inner-banner">
     <div class="wrap img">
       <img src="images/banner-Milk_tea.png">
