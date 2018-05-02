@@ -34,8 +34,10 @@ public class FengfengCommonBeanApplicationTests {
 	public void testRedis(){
 		redisDao.setKey("name","forezp");
 		redisDao.setKey("age","11");
-		logger.info(redisDao.getValue("name"));
-		logger.info(redisDao.getValue("age"));
+//		String s = redisDao.getValue1("use1","name");
+		logger.info("---------"+redisDao.getValue1("user1","name"));
+		logger.info("---------"+redisDao.getValue("name"));
+		logger.info("---------"+redisDao.getValue("age"));
 	}
 
 	@Test
