@@ -3,6 +3,10 @@ server:
   port: 8082
 
 spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: test
  ## applicationuseUnicode=true&characterEncoding=utf8
   application:
     name: order
