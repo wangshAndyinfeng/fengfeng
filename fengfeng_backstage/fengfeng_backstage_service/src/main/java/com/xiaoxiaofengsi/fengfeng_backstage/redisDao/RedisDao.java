@@ -1,5 +1,6 @@
 package com.xiaoxiaofengsi.fengfeng_backstage.redisDao;
 
+
 import com.xiaoxiaofengsi.fengfeng_backstage.waientity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
@@ -7,6 +8,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Repository
@@ -21,6 +24,8 @@ public class RedisDao {
         String use1 = "user1";
         ops1.put(use1,"age","8");
         ops1.put(use1,"name","wangsh");
+
+
 
         ops.set(key,value,1, TimeUnit.MINUTES);//1分钟过期
     }  

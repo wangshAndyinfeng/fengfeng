@@ -13,7 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 //@ImportResource({"classpath*:/spring/spring-aop-transaction.xml"})
@@ -30,14 +34,20 @@ public class FengfengCommonBeanApplicationTests {
 
 	@Autowired
 	RedisDao redisDao;
+
+    @Autowired
+    private StringRedisTemplate template;
 	@Test
 	public void testRedis(){
-		redisDao.setKey("name","forezp");
-		redisDao.setKey("age","11");
-//		String s = redisDao.getValue1("use1","name");
-		logger.info("---------"+redisDao.getValue1("user1","name"));
-		logger.info("---------"+redisDao.getValue("name"));
-		logger.info("---------"+redisDao.getValue("age"));
+//		redisDao.setKey("name","forezp");
+//		redisDao.setKey("age","11");
+////		String s = redisDao.getValue1("use1","name");
+//		logger.info("---------"+redisDao.getValue1("user1","name"));
+//		logger.info("---------"+redisDao.getValue("name"));
+//		logger.info("---------"+redisDao.getValue("age"));
+        Map map = new HashMap();
+        map.put("myheart","12345");
+        template.convertAndSend("PUSH_MESSAGE", map.toString());
 	}
 
 	@Test
