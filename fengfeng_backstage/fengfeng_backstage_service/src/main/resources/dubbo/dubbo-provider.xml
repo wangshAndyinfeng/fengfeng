@@ -19,5 +19,5 @@
     <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}" />
 
     <dubbo:service interface="com.xiaoxiaofengsi.fengfeng_backstage.serviceapi.IUserFirstServiceApi"
-                   ref="userfirstservice" retries="0" timeout="6000" />
+                   ref="userfirstservice" group="one"  retries="0" timeout="6000" />
 </beans>

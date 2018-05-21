@@ -12,5 +12,6 @@
 	<!-- 注册中心暴露服务地址 -->
    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" />
 
-	<dubbo:reference id="axempleService" interface="com.xiaoxiaofengsi.fengfeng_backstage.serviceapi.IUserFirstServiceApi" />
+	<dubbo:reference id="userfirstservice" group="one" interface="com.xiaoxiaofengsi.fengfeng_backstage.serviceapi.IUserFirstServiceApi" />
+
 </beans>
