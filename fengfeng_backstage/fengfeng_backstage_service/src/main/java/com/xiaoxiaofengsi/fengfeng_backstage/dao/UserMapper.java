@@ -18,6 +18,7 @@ public interface UserMapper {
     @Insert("insert into USER_FIRST(user_id, username, password, remark) values(#{userId}, #{username}, #{password}, #{remark})")
     public int add(User user);
 
+
 //    @Update("UPDATE tb_user SET username = #{user.username} , age = #{user.age} WHERE id = #{id}")
 //    public int update(@Param("id") Integer id, @Param("user") User user);
 //
