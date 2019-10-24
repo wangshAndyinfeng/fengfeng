@@ -10,16 +10,15 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xiaoxiaofengsi</groupId>
-	<artifactId>fengfeng_management</artifactId>
+	<artifactId>simple-web</artifactId>
 	<packaging>jar</packaging>
 
-	<name>fengfeng_management</name>
+	<name>simple-web</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<!--<version>${thymeleaf.version}</version>-->
 		</dependency>
 
 		<dependency>
@@ -30,7 +29,8 @@
 		<dependency>
 			<groupId>com.xiaoxiaofengsi</groupId>
 			<artifactId>fengfeng_backstage_api</artifactId>
-			<version>${project.version}</version>
+			<version>1.0.0</version>
+			<!--${project.version}-->
 		</dependency>
 
 		<dependency>
