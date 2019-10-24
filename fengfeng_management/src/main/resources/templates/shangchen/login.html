@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+<meta name="description" content="哈哈哈">
+<meta name="author" content="哈哈哈">
+<link th:href="@{/css/css.css}" rel="stylesheet">
+<!--[if lt IE 9]>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" >
+<![endif]-->
+<!--[if lte IE 6]><meta http-equiv="refresh" content="0;url=IE6/IE6.html"><![endif]-->
+<link href="favicon.ico" rel="SHORTCUT ICON">
+<title>哈哈哈</title>
+</head>
+<body>
+  <!--head-->
+  <div th:include="~{common/head :: head}"></div>
+  <div class="inner-banner">
+    <div class="wrap img">
+      <img src="images/banner-msg.png">
+    </div>
+  </div>
+  <div class="container">
+    <div class="wrap">
+      <div class="c-hd clearfix">会员登录 <span class="c-t"><em>Member login</em><br>哈哈哈汉堡，乐享我味</span></div>
+      <div class="c-wrap" style="min-height:330px;">
+        <div class="mox clearfix">
+          <div class="M-section fl">
+            <table class="m-tab">
+              <tr>
+                <th>用户名</th>
+                <td><input type="text" name="" value="" class="inpt"> </td>
+              </tr>
+              <tr>
+                <th>密码</th>
+                <td><input type="password" name="" value="" class="inpt"> </td>
+              </tr>
+              <tr>
+                <th>验证码</th>
+                <td><input type="text" name="" value="" class="inpt" style="width:130px;">   <img src="upload/img14.jpg">   <a href="javascript:;" class="btn-code">换一张</a></td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td><input type="checkbox" name="" value="" class="in-b"> 记住我的用户名</td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td><button type="button" name="" value="" class="button">会员登录</button></td>
+              </tr>
+            </table>
+          </div>
+          <div class="M-aside fr">
+            <p class="f14">还没有<span class="c900">哈哈哈</span>账户？</p>
+            <p class="mt10">拥有哈哈哈账户，您可以下载最新海报宣传单，<br>3D店铺设计图纸！</p>
+            <p class="mt10"><a href="reg.html" class="button">立即注册</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="c-foot tr">上海星辉餐饮管理有限公司</div>
+    </div>
+  </div>
+  <!--foot-->
+  <div th:include="~{common/head :: foot}"></div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/Action.js"></script>
+<script src="js/waste.js"></script>
+</html>
